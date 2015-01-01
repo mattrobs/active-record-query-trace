@@ -15,7 +15,7 @@ module ActiveRecordQueryTrace
         super
         ActiveRecordQueryTrace.enabled = false
         ActiveRecordQueryTrace.level = :app
-        ActiveRecordQueryTrace.lines = 5
+        ActiveRecordQueryTrace.lines = 2
       end
 
       def sql(event)
@@ -28,7 +28,7 @@ module ActiveRecordQueryTrace
             end
           end
 
-          debug("\t\t\t" + color(  clean_trace(caller)[index].join("\n\t\t\t") , GRAY, false) )
+          debug("\t" + color(  clean_trace(caller)[index].join("\n\t") , WHITE, false) )
         end
       end
 

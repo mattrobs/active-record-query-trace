@@ -28,7 +28,7 @@ module ActiveRecordQueryTrace
             end
           end
 
-          debug(color('Called from: ', YELLOW, true) + clean_trace(caller)[index].join("\n "))
+          debug("\t\t\t" + color(  clean_trace(caller)[index].join("\n\t\t\t") , GRAY, false) )
         end
       end
 
